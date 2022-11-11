@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="fr" xml:lang="fr">
+<head>
+    <title>Graphes - FISA 1</title>
+    <link rel="icon" href="https://moodle.uphf.fr/pluginfile.php/1/theme_adaptable/favicon/1606478051/moodle_favicon-03.png" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, Graphes - FISA 1" />
+<link rel="stylesheet" type="text/css" href="https://moodle.uphf.fr/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://moodle.uphf.fr/theme/styles.php/adaptable/1606478051_1594199731/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.uphf.fr","sesskey":"yIFQ8XMzTq","sessiontimeout":"7200","themerev":"1606478051","slasharguments":1,"theme":"adaptable","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1606478051","admin":"admin","svgicons":true,"usertimezone":"Europe\/Paris","contextid":135827,"langrev":1613964141,"templaterev":"1606478051"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle.uphf.fr\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/moodle.uphf.fr\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.uphf.fr\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.uphf.fr\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.uphf.fr\/theme\/yui_combo.php?m\/1606478051\/","combine":true,"comboBase":"https:\/\/moodle.uphf.fr\/theme\/yui_combo.php?","ext":false,"root":"m\/1606478051\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-imports":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-modform":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-recordings":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-broker":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-rooms":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.uphf.fr\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.uphf.fr\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1606478051\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.uphf.fr\/lib\/javascript.php\/1606478051\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.uphf.fr\/lib\/javascript.php\/1606478051\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@2.7.8\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+    <!-- CSS print media -->
+    <link rel="stylesheet" type="text/css" href="https://moodle.uphf.fr/theme/adaptable/style/print.css" media="print">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:site" value="Moodle | Mes cours en ligne" />
+    <meta name="twitter:title" value="Graphes - FISA 1" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Graphes - FISA 1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://moodle.uphf.fr" />
+    <meta name="og:site_name" value="Moodle | Mes cours en ligne" />
+
+    <!-- Chrome, Firefox OS and Opera on Android topbar color -->
+    <meta name="theme-color" content="transparent" />
+
+    <!-- Windows Phone topbar color -->
+    <meta name="msapplication-navbutton-color" content="transparent" />
+
+    <!-- iOS Safari topbar color -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="transparent" />
+
+        <!-- Load Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400i'
+    rel='stylesheet'
+    type='text/css'>
+    
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400i'
+        rel='stylesheet'
+        type='text/css'>
+    
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400i'
+        rel='stylesheet'
+        type='text/css'>
+    </head>
+
+<body  id="page-enrol-index" class="format-topics  path-enrol chrome dir-ltr lang-fr yui-skin-sam yui3-skin-sam moodle-uphf-fr pagelayout-incourse course-1681 context-135827 category-52 two-column  header-style1 has-page-header  nomobilenavigation">
+
+<div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Passer au contenu principal</a>
+</div><script src="https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/babel-polyfill/polyfill.min.js"></script>
+<script src="https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/polyfills/polyfill.js"></script>
+<script src="https://moodle.uphf.fr/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script src="https://moodle.uphf.fr/theme/jquery.php/core/jquery-3.4.1.min.js"></script>
+<script src="https://moodle.uphf.fr/theme/jquery.php/theme_adaptable/pace-min.js"></script>
+<script src="https://moodle.uphf.fr/theme/jquery.php/theme_adaptable/jquery-flexslider-min.js"></script>
+<script src="https://moodle.uphf.fr/theme/jquery.php/theme_adaptable/tickerme.js"></script>
+<script src="https://moodle.uphf.fr/theme/jquery.php/theme_adaptable/jquery-easing-min.js"></script>
+<script src="https://moodle.uphf.fr/theme/jquery.php/theme_adaptable/adaptable_v2_1_1_2.js"></script>
+<script src="https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<div id="page" class="container-fluid fullin   standard">
+
+
+
+
+    <header id="adaptable-page-header-wrapper"  >
+
+    <div id="above-header" class="mb-2 mb-lg-3">
+        <div class="container">
+            <nav class="navbar navbar-expand btco-hover-menu">
+
+                
+                <div class="collapse navbar-collapse">
+                <div class="my-auto m-1"></div>
+                    <ul class="navbar-nav ml-auto my-auto">
+
+                        <div class="pull-left">
+                            <ul class="navbar-nav mr-auto"></ul>                        </div>
+
+                        
+                                                <li class="nav-item d-xs-block d-sm-block d-md-none my-auto mx-md-1 my-auto">
+                            <a class="nav-link" href="https://moodle.uphf.fr/course/search.php">
+                                <i class="icon fa fa-search fa-fw " title="Search" aria-label="Search"></i>
+                            </a>
+                        </li>
+
+                        <div class="my-auto mx-md-1"></div><li class="nav-item dropdown ml-2 my-auto"><li class="nav-item dropdown my-auto"><a href="#" class="nav-link dropdown-toggle my-auto" role="button" id="langmenu0" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownlangmenu0" data-target="#" data-toggle="dropdown" title="Langue"><i class="fa fa-globe fa-lg"></i><span class="langdesc">Français ‎(fr)‎</span></a><ul role="menu" class="dropdown-menu" id="dropdownlangmenu0" aria-labelledby="langmenu0"><li><a title="Deutsch ‎(de)‎" class="dropdown-item" href="https://moodle.uphf.fr/enrol/index.php?id=1681&amp;lang=de">Deutsch ‎(de)‎</a></li><li><a title="English ‎(en)‎" class="dropdown-item" href="https://moodle.uphf.fr/enrol/index.php?id=1681&amp;lang=en">English ‎(en)‎</a></li><li><a title="Español - Internacional ‎(es)‎" class="dropdown-item" href="https://moodle.uphf.fr/enrol/index.php?id=1681&amp;lang=es">Español - Internacional ‎(es)‎</a></li><li><a title="Français ‎(fr)‎" class="dropdown-item" href="https://moodle.uphf.fr/enrol/index.php?id=1681&amp;lang=fr">Français ‎(fr)‎</a></li></ul></li></li>                            <form id="pre-login-form" class="form-inline my-0 my-lg-1"
+                                action="https://moodle.uphf.fr/login/index.php" method="post">
+                            <input type="hidden" name="logintoken"
+                                value="wUsDk8XkMi7kPPSs9qZyTWC9OgsOOYOx"/>
+                            <button class="btn-login" type="submit">
+                                Connexion                            </button>
+                            </form>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div id="page-header" class="container d-none d-lg-block">
+        <div class="row">
+
+        <div class="col-lg-4">
+        <div class="d-flex align-items-start bd-highlight"><div class="p-2 bd-highlight d-none d-lg-block"><a href=https://moodle.uphf.fr aria-label="home" title="Moodle | Mes cours en ligne"><img src=//moodle.uphf.fr/pluginfile.php/1/theme_adaptable/logo/1606478051/logo-2020-uphf-moodle.png id="logo" alt="" /></a></div></div>        </div>
+
+        <div class="col-lg-8 p-0 my-auto">
+            
+                                    <div class="searchbox d-none d-lg-block">
+                        <form action="https://moodle.uphf.fr/course/search.php">
+                            <label class="hidden" for="search-1" style="display: none;">Rechercher des cours                            </label>
+                            <div class="search-box grey-box bg-white clear-fix">
+                                <input placeholder="Rechercher un cours"
+                                        accesskey="6"
+                                        class="search_tour bg-white no-border left search-box__input ui-autocomplete-input"
+                                        type="text"
+                                        name="search"
+                                        id="search-1"
+                                        autocomplete="off">
+                                        <button title="Rechercher un cours"
+                                                type="submit" class="no-border bg-white pas search-box__button">
+                                                <abbr class="fa fa-search"
+                                                    title="Rechercher un cours">
+                                                </abbr>
+                                        </button>
+                            </div>
+                        </form>
+                    </div>
+                
+                <div id="course-header">
+                                    </div>
+
+            </div>
+            </div>
+
+    </div>
+
+
+
+
+
+</header>
+
+
+<div class="container outercont">
+    <div class="row"><div id="page-navbar" class="col-12"><nav role="navigation" aria-label="Fil d'ariane">
+            <ol  class="breadcrumb d-none d-md-flex"><i title="Accueil" class="fa fa-folder-open fa-lg"></i><span class="separator"><i class="fa-chevron-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://moodle.uphf.fr/course/index.php"><span itemprop="title">Cours</span></a></span></li><span class="separator"><i class="fa-chevron-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://moodle.uphf.fr/course/index.php?categoryid=95"><span itemprop="title">INSA</span></a></span></li><span class="separator"><i class="fa-chevron-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://moodle.uphf.fr/course/index.php?categoryid=7"><span itemprop="title">Ingénieurs</span></a></span></li><span class="separator"><i class="fa-chevron-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://moodle.uphf.fr/course/index.php?categoryid=52"><span itemprop="title">Niveau Licence 3</span></a></span></li><span class="separator"><i class="fa-chevron-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" title="Graphes - FISA 1" href="https://moodle.uphf.fr/course/view.php?id=1681"><span itemprop="title">Graphes - FISA 1</span></a></span></li><span class="separator"><i class="fa-chevron-right fa"></i>
+                             </span><li><span tabindex="0">Options d'inscription</span></li></ol>
+        </nav></div></div>    <div id="page-content" class="row">
+        <section id="region-main" class="col-9">
+            <span class="notifications" id="user-notifications"></span><div role="main"><span id="maincontent"></span><h2>Options d'inscription</h2><div class="box generalbox info"><div class="coursebox clearfix" data-courseid="1681" data-type="1"><div class="info"><h3 class="coursename"><a class="aalink" href="https://moodle.uphf.fr/course/view.php?id=1681">Graphes - FISA 1</a></h3><div class="moreinfo"></div><div class="enrolmenticons"><i class="icon fa fa-key fa-fw "  title="Auto-inscription" aria-label="Auto-inscription"></i></div></div><div class="content"></div></div></div><div class="box generalbox">
+<form autocomplete="off" action="https://moodle.uphf.fr/login/index.php" method="post" accept-charset="utf-8" id="mform1_gcIG5zI3vmY5DCD" class="mform">
+	<div style="display: none;"><input name="sesskey" type="hidden" value="yIFQ8XMzTq" />
+<input name="_qf__enrol_self_empty_form" type="hidden" value="1" />
+<input name="mform_isexpanded_id_selfheader" type="hidden" value="1" />
+</div>
+
+
+	<fieldset class="clearfix collapsible"  id="id_selfheader">
+		<legend class="ftoggler">Auto-inscription (Étudiant)</legend>
+		<div class="fcontainer clearfix">
+		<div id="fitem_id_info" class="form-group row  fitem femptylabel  " >
+    <div class="col-md-3">
+        <span class="float-sm-right text-nowrap">
+            
+            
+            
+        </span>
+        
+    </div>
+    <div class="col-md-9 form-inline felement" data-fieldtype="static">
+        <div class="form-control-static">
+        Les visiteurs anonymes ne peuvent pas accéder à ce cours. Veuillez vous connecter.<div class="continuebutton">
+    <form method="get" action="https://moodle.uphf.fr/login/index.php" >
+        <button type="submit" class="btn btn-primary"
+            id="single_button6033cd8a277731"
+            title=""
+            
+            >Continuer</button>
+    </form>
+</div>
+        </div>
+        <div class="form-control-feedback invalid-feedback" id="id_error_info" >
+            
+        </div>
+    </div>
+</div>
+		</div></fieldset>
+</form></div></div>        </section>
+
+        <aside id="block-region-side-post" class="col-3 d-print-none  block-region" data-blockregion="side-post" data-droptarget="1"><a class="skip skip-block" id="fsb-2" href="#sb-2">Passer Navigation</a><div id="inst16" class="block_navigation block mb-3" role="navigation" data-block="navigation" data-instanceid="16" aria-labelledby="instance-16-header"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-16-header">Navigation</h2></div></div><div class="content"><ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/nav_loader"><li class="type_unknown depth_1 contains_branch" aria-labelledby="label_1_1"><p class="tree_item branch navigation_node" role="treeitem" aria-expanded="true" aria-owns="random6033cd8a277732_group" data-collapsible="false"><a tabindex="-1" id="label_1_1" href="https://moodle.uphf.fr/">Accueil</a></p><ul id="random6033cd8a277732_group" role="group"><li class="type_course depth_2 contains_branch" aria-labelledby="label_2_2"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random6033cd8a277733_group"><span tabindex="-1" id="label_2_2" title="Moodle | Mes cours en ligne">Moodle</span></p><ul id="random6033cd8a277733_group" role="group" aria-hidden="true"><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_4"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_4" href="https://moodle.uphf.fr/calendar/view.php?view=month&amp;course=1681"><i class="icon fa fa-calendar fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Calendrier</span></a></p></li></ul></li><li class="type_system depth_2 contains_branch" aria-labelledby="label_2_10"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random6033cd8a277735_group"><a tabindex="-1" id="label_2_10" href="https://moodle.uphf.fr/course/index.php">Cours</a></p><ul id="random6033cd8a277735_group" role="group"><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_11"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random6033cd8a277736_group"><a tabindex="-1" id="label_3_11" href="https://moodle.uphf.fr/course/index.php?categoryid=95">INSA</a></p><ul id="random6033cd8a277736_group" role="group"><li class="type_category depth_4 contains_branch" aria-labelledby="label_4_12"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random6033cd8a277737_group"><a tabindex="-1" id="label_4_12" href="https://moodle.uphf.fr/course/index.php?categoryid=7">Ingénieurs</a></p><ul id="random6033cd8a277737_group" role="group"><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_13"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_50" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_50" data-node-key="50" data-node-type="10"><a tabindex="-1" id="label_5_13" href="https://moodle.uphf.fr/course/index.php?categoryid=50">Niveau Licence 1</a></p></li><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_14"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_51" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_51" data-node-key="51" data-node-type="10"><a tabindex="-1" id="label_5_14" href="https://moodle.uphf.fr/course/index.php?categoryid=51">Niveau Licence 2</a></p></li><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_15"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random6033cd8a277738_group"><a tabindex="-1" id="label_5_15" href="https://moodle.uphf.fr/course/index.php?categoryid=52">Niveau Licence 3</a></p><ul id="random6033cd8a277738_group" role="group"><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_16"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_16" title="Graphes - FISE 1" href="https://moodle.uphf.fr/course/view.php?id=4942"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Graphes - FISE 1</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_17"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_17" title="Communication individuelle copie 1" href="https://moodle.uphf.fr/course/view.php?id=4873"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Communication individuelle_1</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_18"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_18" title="FISA4 GI ProdLog ERP" href="https://moodle.uphf.fr/course/view.php?id=4869"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">FISA4 GI ProdLog ERP</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_19"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_19" title="FAPSA L. DAL et A. MULLER" href="https://moodle.uphf.fr/course/view.php?id=4851"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">FAPSA Innov</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_20"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_20" title="Outils informatiques appliqués au Génie Industriel" href="https://moodle.uphf.fr/course/view.php?id=4848"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">OIAGI</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_21"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_21" title="Programmation en C" href="https://moodle.uphf.fr/course/view.php?id=4820"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">progr_langageC</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_22"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_22" title="Qualité d&#039;usage" href="https://moodle.uphf.fr/course/view.php?id=4773"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Qualisage</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_23"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_23" title="FISA3 GI Fiabilité " href="https://moodle.uphf.fr/course/view.php?id=4757"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">FISA3 GI Fiabilité</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_24"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_24" title="Fondements de la sécurité" href="https://moodle.uphf.fr/course/view.php?id=4692"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">FondSecu3AICY</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_25"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_25" title="Cinématique des systèmes de solides" href="https://moodle.uphf.fr/course/view.php?id=4672"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Cinématique du solide</span></a></p></li><li class="type_course depth_6 item_with_icon" aria-labelledby="label_6_26"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_26" title="atelier d&#039;écriture créative" href="https://moodle.uphf.fr/course/view.php?id=4634"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">écriture créative</span></a></p></li><li class="type_course depth_6 item_with_icon current_branch" aria-labelledby="label_6_27"><p class="tree_item hasicon active_tree_node" role="treeitem"><a tabindex="-1" id="label_6_27" title="Graphes - FISA 1" href="https://moodle.uphf.fr/course/view.php?id=1681"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Graphes - FISA 1</span></a></p></li></ul></li><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_28"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_53" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_53" data-node-key="53" data-node-type="10"><a tabindex="-1" id="label_5_28" href="https://moodle.uphf.fr/course/index.php?categoryid=53">Niveau Master 1</a></p></li><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_29"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_54" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_54" data-node-key="54" data-node-type="10"><a tabindex="-1" id="label_5_29" href="https://moodle.uphf.fr/course/index.php?categoryid=54">Niveau Master 2</a></p></li><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_30"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_59" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_59" data-node-key="59" data-node-type="10"><a tabindex="-1" id="label_5_30" href="https://moodle.uphf.fr/course/index.php?categoryid=59">Niveau DRTu / DU / Mastère Ferroviaire</a></p></li><li class="type_category depth_5 contains_branch" aria-labelledby="label_5_31"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_61" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_61" data-node-key="61" data-node-type="10"><a tabindex="-1" id="label_5_31" href="https://moodle.uphf.fr/course/index.php?categoryid=61">Inter-niveaux</a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_32"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_32" title="Mathématiques 2 Probabilités StatistiquesFISA3 GI-S6" href="https://moodle.uphf.fr/course/view.php?id=4902"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Math2-ProbaStat-FISA3 GI-S6</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_33"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_33" title="INSA FAPSA COURSE D&#039;ORIENTATION" href="https://moodle.uphf.fr/course/view.php?id=4803"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">INSA FAPSA C.O</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_34"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_34" title="Ingénieur 4A" href="https://moodle.uphf.fr/course/view.php?id=4811"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">ESP4A</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_35"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_35" title="Électronique FISA" href="https://moodle.uphf.fr/course/view.php?id=4799"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Élect.Ana.Num</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_36"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_36" title="Instrumentation-MT3" href="https://moodle.uphf.fr/course/view.php?id=4789"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Instru</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_37"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_37" title="Mécanique des fluides - FISA" href="https://moodle.uphf.fr/course/view.php?id=4760"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">MdF</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_38"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_38" title="Probabilités Statistiques spécialité Ingénieurs Génie Electrique et Informatique Industrielle FISA S8" href="https://moodle.uphf.fr/course/view.php?id=4608"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Probabilités Statistiques GEII FISA S8</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_39"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_39" title="Introduction to Cryptography" href="https://moodle.uphf.fr/course/view.php?id=4303"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Crypto</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_40"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_40" title="INSA - Ingénieurs - CTI" href="https://moodle.uphf.fr/course/view.php?id=4015"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">INSA_Ing_CTI</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_41"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_41" title="Exploitation de données et Big Data" href="https://moodle.uphf.fr/course/view.php?id=3536"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">EDBD</span></a></p></li><li class="type_course depth_5 item_with_icon" aria-labelledby="label_5_42"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_42" title="MOODLE INSA Ingénieurs" href="https://moodle.uphf.fr/course/view.php?id=3489"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">INSA Ingénieurs</span></a></p></li></ul></li><li class="type_category depth_4 contains_branch" aria-labelledby="label_4_43"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_10" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_10" data-node-key="10" data-node-type="10"><a tabindex="-1" id="label_4_43" href="https://moodle.uphf.fr/course/index.php?categoryid=10">Sciences et Métiers du Sport</a></p></li><li class="type_category depth_4 contains_branch" aria-labelledby="label_4_44"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_4" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_4" data-node-key="4" data-node-type="10"><a tabindex="-1" id="label_4_44" href="https://moodle.uphf.fr/course/index.php?categoryid=4">Sciences et Techniques</a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_45"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_45" title="Mobilité  Internationale Licence &amp; Master" href="https://moodle.uphf.fr/course/view.php?id=4834"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Mobilité Internationale </span></a></p></li><li class="type_course depth_4 contains_branch" aria-labelledby="label_4_46"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_4327" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_4327" data-node-key="4327" data-node-type="20"><a tabindex="-1" id="label_4_46" title="Réunions HCERES " href="https://moodle.uphf.fr/course/view.php?id=4327">HCERES</a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_47"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_47" title="INSA Echanges Japon" href="https://moodle.uphf.fr/course/view.php?id=4145"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">INSA_Japon</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_48"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_48" title="Stages Informatiques" href="https://moodle.uphf.fr/course/view.php?id=4140"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">StageInfo</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_49"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_49" title="Espagnol INSA 1A Mme.MENDOZA" href="https://moodle.uphf.fr/course/view.php?id=4120"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">ESP1</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_50"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_50" title="Espagnol 1A Mme.MENDOZA" href="https://moodle.uphf.fr/course/view.php?id=4119"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">ESP3</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_51"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_51" title="RESEAUX Licence Pro DLWM" href="https://moodle.uphf.fr/course/view.php?id=4112"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">RESEAUX LP DLWM</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_52"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_52" title="cours du lundi 2 novembre" href="https://moodle.uphf.fr/course/view.php?id=3773"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">DAEU10CAMBRAI</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_53"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_53" title="anglais renforcé  FISA5 GI GEII groupe Thierry Ribals" href="https://moodle.uphf.fr/course/view.php?id=3609"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">anglais renforcé FISA 5 </span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_54"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_54" title="SYSTEMES DEUST IOSI 2" href="https://moodle.uphf.fr/course/view.php?id=2781"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">SYST DEUST IOSI 2</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_55"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_55" title="Intranet Département d&#039;Automatique de l&#039;INSA Hauts-de-France" href="https://moodle.uphf.fr/course/view.php?id=3511"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">Dpt Automatique INSA - Intranet</span></a></p></li></ul></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_56"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_86" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_86" data-node-key="86" data-node-type="10"><a tabindex="-1" id="label_3_56" href="https://moodle.uphf.fr/course/index.php?categoryid=86">[Obligatoire] Déroulez cette liste pour sélectionn...</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_57"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_96" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_96" data-node-key="96" data-node-type="10"><a tabindex="-1" id="label_3_57" href="https://moodle.uphf.fr/course/index.php?categoryid=96">ISH</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_58"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_3" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_3" data-node-key="3" data-node-type="10"><a tabindex="-1" id="label_3_58" href="https://moodle.uphf.fr/course/index.php?categoryid=3">IUT</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_59"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_13" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_13" data-node-key="13" data-node-type="10"><a tabindex="-1" id="label_3_59" href="https://moodle.uphf.fr/course/index.php?categoryid=13">Inter-composantes</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_60"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_6" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_6" data-node-key="6" data-node-type="10"><a tabindex="-1" id="label_3_60" href="https://moodle.uphf.fr/course/index.php?categoryid=6">Bibliothèques</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_61"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_12" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_12" data-node-key="12" data-node-type="10"><a tabindex="-1" id="label_3_61" href="https://moodle.uphf.fr/course/index.php?categoryid=12">Formation à distance</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_62"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_1" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_1" data-node-key="1" data-node-type="10"><a tabindex="-1" id="label_3_62" href="https://moodle.uphf.fr/course/index.php?categoryid=1">Pédagogie &amp; Numérique</a></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_63"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_90" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_90" data-node-key="90" data-node-type="10"><a tabindex="-1" id="label_3_63" href="https://moodle.uphf.fr/course/index.php?categoryid=90">Plateforme des Langues</a></p></li></ul></li></ul></li></ul></div></div><span class="skip-block-to" id="sb-2"></span></aside><div id="showsidebaricon" title="Afficher / cacher la sidebar"><i class="fa fa-3x fa-angle-left" aria-hidden="true"></i></div>    </div>
+</div>
+
+
+<footer id="page-footer" class="d-none d-lg-block">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pagination-centered">
+<div class="socialbox"></div>                </div>
+            </div>
+        </div>
+
+    <div class="info container2 clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-md-0 my-2">
+                    <div class="tool_usertours-resettourcontainer"></div>
+                 </div>
+
+                <div class="col-md-4 my-md-0 my-2 helplink">
+                </div>
+                <div class="col-md-4 my-md-0 my-2">
+                    <div class="tool_dataprivacy"><a href="https://moodle.uphf.fr/admin/tool/dataprivacy/summary.php">Résumé de conservation de données</a></div><a href="https://download.moodle.org/mobile?version=2020061500.01&amp;lang=fr&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Obtenir l'app mobile</a>                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="back-to-top"><i class="fa fa-angle-up "></i></div>
+
+
+<script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle.uphf.fr/lib/requirejs.php/1606478051/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/jquery/jquery-3.4.1.min',
+        jqueryui: 'https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://moodle.uphf.fr/lib/javascript.php/1606478051/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+require(['core/prefetch']);
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://moodle.uphf.fr/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage('fr', {
+  "Audio Player": "Lecteur audio",
+  "Video Player": "Lecteur vidéo",
+  "Play": "Lecture",
+  "Pause": "Pause",
+  "Replay": "Revoir",
+  "Current Time": "Temps actuel",
+  "Duration": "Durée",
+  "Remaining Time": "Temps restant",
+  "Stream Type": "Type de flux",
+  "LIVE": "EN DIRECT",
+  "Loaded": "Chargé",
+  "Progress": "Progression",
+  "Progress Bar": "Barre de progression",
+  "progress bar timing: currentTime={1} duration={2}": "{1} de {2}",
+  "Fullscreen": "Plein écran",
+  "Non-Fullscreen": "Fenêtré",
+  "Mute": "Sourdine",
+  "Unmute": "Son activé",
+  "Playback Rate": "Vitesse de lecture",
+  "Subtitles": "Sous-titres",
+  "subtitles off": "Sous-titres désactivés",
+  "Captions": "Sous-titres transcrits",
+  "captions off": "Sous-titres transcrits désactivés",
+  "Chapters": "Chapitres",
+  "Descriptions": "Descriptions",
+  "descriptions off": "descriptions désactivées",
+  "Audio Track": "Piste audio",
+  "Volume Level": "Niveau de volume",
+  "You aborted the media playback": "Vous avez interrompu la lecture de la vidéo.",
+  "A network error caused the media download to fail part-way.": "Une erreur de réseau a interrompu le téléchargement de la vidéo.",
+  "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Cette vidéo n'a pas pu être chargée, soit parce que le serveur ou le réseau a échoué ou parce que le format n'est pas reconnu.",
+  "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La lecture de la vidéo a été interrompue à cause d'un problème de corruption ou parce que la vidéo utilise des fonctionnalités non prises en charge par votre navigateur.",
+  "No compatible source was found for this media.": "Aucune source compatible n'a été trouvée pour cette vidéo.",
+  "The media is encrypted and we do not have the keys to decrypt it.": "Le média est chiffré et nous n'avons pas les clés pour le déchiffrer.",
+  "Play Video": "Lire la vidéo",
+  "Close": "Fermer",
+  "Close Modal Dialog": "Fermer la boîte de dialogue modale",
+  "Modal Window": "Fenêtre modale",
+  "This is a modal window": "Ceci est une fenêtre modale",
+  "This modal can be closed by pressing the Escape key or activating the close button.": "Ce modal peut être fermé en appuyant sur la touche Échap ou activer le bouton de fermeture.",
+  ", opens captions settings dialog": ", ouvrir les paramètres des sous-titres transcrits",
+  ", opens subtitles settings dialog": ", ouvrir les paramètres des sous-titres",
+  ", opens descriptions settings dialog": ", ouvrir les paramètres des descriptions",
+  ", selected": ", sélectionné",
+  "captions settings": "Paramètres des sous-titres transcrits",
+  "subtitles settings": "Paramètres des sous-titres",
+  "descriptions settings": "Paramètres des descriptions",
+  "Text": "Texte",
+  "White": "Blanc",
+  "Black": "Noir",
+  "Red": "Rouge",
+  "Green": "Vert",
+  "Blue": "Bleu",
+  "Yellow": "Jaune",
+  "Magenta": "Magenta",
+  "Cyan": "Cyan",
+  "Background": "Arrière-plan",
+  "Window": "Fenêtre",
+  "Transparent": "Transparent",
+  "Semi-Transparent": "Semi-transparent",
+  "Opaque": "Opaque",
+  "Font Size": "Taille des caractères",
+  "Text Edge Style": "Style des contours du texte",
+  "None": "Aucun",
+  "Raised": "Élevé",
+  "Depressed": "Enfoncé",
+  "Uniform": "Uniforme",
+  "Dropshadow": "Ombre portée",
+  "Font Family": "Famille de polices",
+  "Proportional Sans-Serif": "Polices à chasse variable sans empattement (Proportional Sans-Serif)",
+  "Monospace Sans-Serif": "Polices à chasse fixe sans empattement (Monospace Sans-Serif)",
+  "Proportional Serif": "Polices à chasse variable avec empattement (Proportional Serif)",
+  "Monospace Serif": "Polices à chasse fixe avec empattement (Monospace Serif)",
+  "Casual": "Manuscrite",
+  "Script": "Scripte",
+  "Small Caps": "Petites capitales",
+  "Reset": "Réinitialiser",
+  "restore all settings to the default values": "Restaurer tous les paramètres aux valeurs par défaut",
+  "Done": "Terminé",
+  "Caption Settings Dialog": "Boîte de dialogue des paramètres des sous-titres transcrits",
+  "Beginning of dialog window. Escape will cancel and close the window.": "Début de la fenêtre de dialogue. La touche d'échappement annulera et fermera la fenêtre.",
+  "End of dialog window.": "Fin de la fenêtre de dialogue."
+});
+
+    });
+});;
+
+require(['theme_boost/form-display-errors'], function(module) {
+    module.enhance("id_info");
+});
+;
+M.util.js_pending('theme_adaptable/adaptable'); require(['theme_adaptable/adaptable'], function(amd) {amd.init(); M.util.js_complete('theme_adaptable/adaptable');});;
+M.util.js_pending('theme_adaptable/bsoptions'); require(['theme_adaptable/bsoptions'], function(amd) {amd.init({"stickynavbar":true}); M.util.js_complete('theme_adaptable/bsoptions');});;
+M.util.js_pending('theme_adaptable/drawer'); require(['theme_adaptable/drawer'], function(amd) {amd.init(); M.util.js_complete('theme_adaptable/drawer');});;
+M.util.js_pending('block_navigation/navblock'); require(['block_navigation/navblock'], function(amd) {amd.init("16"); M.util.js_complete('block_navigation/navblock');});;
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("17", null); M.util.js_complete('block_settings/settingsblock');});;
+M.util.js_pending('theme_adaptable/showsidebar'); require(['theme_adaptable/showsidebar'], function(amd) {amd.init(); M.util.js_complete('theme_adaptable/showsidebar');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Modifi\u00e9 le","name":"Nom","error":"Erreur","info":"Information","yes":"Oui","no":"Non","ok":"OK","changesmadereallygoaway":"Vous avez effectu\u00e9 des modifications. Voulez-vous vraiment quitter cette page et perdre vos modifications\u00a0?","viewallcourses":"Afficher tous les cours","cancel":"Annuler","confirm":"Confirmer","areyousure":"En \u00eates-vous bien s\u00fbr\u00a0?","closebuttontitle":"Fermer","unknownerror":"Erreur inconnue","file":"Fichier","url":"URL"},"repository":{"type":"Type","size":"Taille","invalidjson":"Cha\u00eene JSON non valide","nofilesattached":"Aucun fichier joint","filepicker":"S\u00e9lecteur de fichiers","logout":"D\u00e9connexion","nofilesavailable":"Aucun fichier disponible","norepositoriesavailable":"D\u00e9sol\u00e9, aucun de vos d\u00e9p\u00f4ts actuels ne peut retourner de fichiers dans le format requis.","fileexistsdialogheader":"Le fichier existe","fileexistsdialog_editor":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint au texte que vous modifiez.","fileexistsdialog_filemanager":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint","renameto":"Renommer \u00e0 \u00ab\u00a0{$a}\u00a0\u00bb","referencesexist":"Ce fichier est utilis\u00e9 comme source par {$a} alias.","select":"S\u00e9lectionnez"},"admin":{"confirmdeletecomments":"Voulez-vous vraiment supprimer des commentaires\u00a0?","confirmation":"Confirmation"},"debug":{"debuginfo":"Info de d\u00e9bogage","line":"Ligne","stacktrace":"Trace de la pile"},"langconfig":{"labelsep":"&nbsp;"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"fr"});
+});
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+Y.use("moodle-core-formchangechecker",function() {M.core_formchangechecker.init({"formid":"mform1_gcIG5zI3vmY5DCD","initialdirtystate":false});
+});
+Y.use("moodle-form-shortforms",function() {M.form.shortforms({"formid":"mform1_gcIG5zI3vmY5DCD"});
+});
+M.util.help_popups.setup(Y);
+M.util.init_block_hider(Y, {"id":"inst16","title":"Navigation","preference":"block16hidden","tooltipVisible":"Cacher le bloc Navigation","tooltipHidden":"Montrer le bloc Navigation"});
+ M.util.js_pending('random6033cd8a2777344'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random6033cd8a2777344'); });
+})();
+//]]>
+</script>
+
+</div>
+<script>
+// Script pour remplacer l'image par défaut d'un cours par l'image perso de l'enseignant
+// pré-requis #1 = activer l'affichage du résumé qlq soit le nombre de cours : Administration du site > Présentation > Cours : Limite de cours avec résumé = 10000
+// pré-requis #2 = limiter les fichiers de résumé de cours à 1 et aux formats img (jpg/png/gif) : Administration du site > Présentation > Cours : Limite du nombre de fichiers de résumé des cours = 1 | Extensions des fichiers de résumé des cours = .jpg,.gif,.png
+window.onload=function(){
+	if (document.getElementsByClassName("courses") != undefined){
+
+		var contenuBoitesCours = document.getElementsByClassName("coursebox");
+		for(var i=0; i<contenuBoitesCours.length;i++){
+ 	var imgDuCours = contenuBoitesCours[i].getElementsByClassName("content")[0].getElementsByClassName("courseimage")[0];
+ 	if(imgDuCours!= undefined){
+				contenuBoitesCours[i].appendChild(imgDuCours);
+				var srcImg = imgDuCours.getElementsByTagName("img")[0].src;
+				imgDuCours.style.background = 'url('+srcImg+')';
+			}else{
+				var imgCorporate = document.createElement("img");
+				imgCorporate.setAttribute("src","https://moodle.uphf.fr/pluginfile.php/48/mod_resource/content/6/cours.jpg");
+				contenuBoitesCours[i].appendChild(imgCorporate);
+			}
+		}	
+	}
+// fin Window onload
+}
+
+//Script complémentaire au script pour remplacer l'image par défaut d'un cours par l'image perso de l'enseignant
+//Toggle pour l'affichage du résumé (ré-activer pour pvr afficher l'image du cours)
+if (document.getElementsByClassName("courses")[0] != undefined){
+var contenuBoitesCours = document.getElementsByClassName("coursebox");
+for(var i=0; i<contenuBoitesCours.length;i++){
+	if(contenuBoitesCours[i].getElementsByClassName("summary")[0] != undefined){
+		contenuBoitesCours[i].getElementsByClassName("summary")[0].style.display="none";
+		var infoResumeCours = document.getElementsByClassName("moreinfo");
+		infoResumeCours[i].innerHTML = "<img class=\"icon \" alt=\"Résumé\" title=\"Résumé\" src=\"https://moodle.uphf.fr/theme/image.php/adaptable/core/1509442261/i/info\">";
+	}
+}
+document.getElementsByClassName('courses')[0].addEventListener('click', function(e){
+	var initElem = e.target;
+	if(initElem.className.trim() == "icon" && initElem.getAttribute("title") == "Résumé"){
+	 var courseBox = closest(initElem, ".coursebox", ".courses");
+	 var summaryElem = courseBox.getElementsByClassName("summary");
+	 summaryElem = summaryElem[0];
+	 if(summaryElem.style.display=="none"){
+	 summaryElem.style.display="block";
+	 }else{
+	 summaryElem.style.display="none";
+	 }
+	 }
+});
+
+function closest(el, selector, stopSelector) {
+ var retval = null;
+		while (el) {
+			if (el.matches(selector)) {
+	 		retval = el;
+	 		break
+			} else if (stopSelector && el.matches(stopSelector)) {
+	 		break
+			}
+			el = el.parentElement;
+ 		}
+	return retval;
+}
+}
+
+//Ajout de l'info et du lien vers freepik au dessus du champ "Fichiers de résumé des cours" des paramètres d'un espace de cours
+
+if(document.getElementsByTagName('form')[0].action=="https://moodle.uphf.fr/course/edit.php"){
+var personnalisationImgCours = document.createElement("div");
+personnalisationImgCours.setAttribute("id","personnalisationImgCours");
+personnalisationImgCours.innerHTML = "Personnalisez l'image de votre cours avec une illustration gratuite et libre issue de ";
+
+var lienFreepik = document.createElement("a");
+lienFreepik.setAttribute("href","https://fr.freepik.com/");
+lienFreepik.setAttribute("target","_blank");
+lienFreepik.setAttribute("alt","https://fr.freepik.com/");
+lienFreepik.setAttribute("title", "https://fr.freepik.com/");
+lienFreepik.textContent = 'https://fr.freepik.com/';
+
+personnalisationImgCours.appendChild(lienFreepik);
+	document.getElementById("fitem_id_overviewfiles_filemanager").parentNode.insertBefore(personnalisationImgCours, document.getElementById("fitem_id_overviewfiles_filemanager"));
+}
+</script>
+
+
+
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://piwik.uphf.fr/piwik/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '26']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+
+</body>
+</html>

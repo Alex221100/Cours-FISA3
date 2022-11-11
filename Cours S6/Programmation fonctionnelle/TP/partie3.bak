@@ -1,0 +1,100 @@
+#lang racket
+
+(define creationNoeud
+  (lambda (n v LP LS)
+    (list n v LP LS)))
+
+(define valeurNoeud;donne la valeur d'un noeud N
+  (lambda (N)
+    (cadr N)))
+
+(define nomNoeud;donne le nom d'un noeud N
+  (lambda (N)
+    (car N)))
+
+(define noeudPred;donne la liste des prédécesseurs d'un noeud N
+  (lambda (N)
+    (caddr N)))
+
+(define noeudSuc;donne la liste des successeurs d'un noeud N
+  (lambda (N)
+    (cadddr N)))
+
+(define appartient?;determine si une valeur appartient à une liste
+  (lambda (e L)
+    (if (null? L)
+        #f
+        (if (= (car L) e)
+            #t
+            (appartient? e (cdr L))))))
+
+(define ajoutNoeud;ajoute un noeud N dans un graphe G
+  (lambda (N G)
+    (if (null? G)
+        N
+        (if(null? N)
+           G
+           (ajoutNoeud2 G N '())))))
+
+(define ajoutNoeud2;Gère l'ajout des successeurs, prédécesseurs ainsi que du noeud N dans le graphe G
+  (lambda (G N G2);G2 est le résultat de cet ajout
+  (if (null? G)
+      (cons N G2)
+      (if (appartient? (nomNoeud (car G)) (noeudSuc N))
+          (ajoutNoeud2 (cdr G) N (cons (creationNoeud (nomNoeud (car G)) (valeurNoeud (car G)) (cons (nomNoeud N) (noeudPred (car G))) (noeudSuc (car G))) G2 ))
+          (if (appartient? (nomNoeud (car G)) (noeudPred N))
+              (ajoutNoeud2 (cdr G) N (cons (creationNoeud (nomNoeud (car G)) (valeurNoeud (car G)) (noeudPred (car G)) (cons (nomNoeud N) (noeudSuc (car G)))) G2))
+              (ajoutNoeud2 (cdr G) N (cons (car G) G2)))))))
+
+(define suppressionNoeud;supprime un noeud N dans un graphe G
+  (lambda (N G)
+    (if (null? G)
+        '()
+        (if(null? N)
+           G
+           (suppressionNoeud2 G N '())))))
+
+(define suppressionNoeud2;Gère l'ajout des successeurs, prédécesseurs ainsi que du noeud N dans le graphe G
+  (lambda (G N G2);G2 est le résultat de cet ajout
+  (if (null? G)
+      (cons G2 '())
+      (if (appartient? (nomNoeud N) (noeudSuc (car G)))
+          (suppressionNoeud2 (cdr G) N G2)
+          (if (appartient? (nomNoeud N) (noeudPred (car G)))
+              (suppressionNoeud2 (cdr G) N)
+              (suppressionNoeud2 (cdr G) N (cons (car G) G2)))))))
+
+(define listeSuccesseurs;donne la liste des successeurs directs d'un noeud N dans un graphe G
+  (lambda (N G)
+    (if (null? G)
+        '()
+        (if (eq? N (nomNoeud (car G)))
+            (noeudSuc (car G))
+            (listeSuccesseurs N (cdr G))))))
+            
+(define listePredecesseurs;donne la liste des prédécesseurs direct d'un noeud N dans un graphe G
+  (lambda (N G)
+    (if (null? G)
+        '()
+        (if (eq? N (nomNoeud (car G)))
+            (noeudPred (car G))
+            (listePredecesseurs N (cdr G))))))
+  
+;(define G (list '(1 2 () (2 3 6)) '(2 2 (1) (3 7)) '(3 2 (1 2) (4 6 7)) '(4 2 (3) (5 9)) '(5 2 (4 6) (8)) '(6 2 (1 3) (5)) '(7 2 (2 3) (9)) '(8 2 (5 9) ()) '(9 2 (4 7) (8))))
+;(listePredecesseurs 3 G)
+;(listeSuccesseurs 3 G)
+(define N (creationNoeud 10 '(4 2) '(1) '(3 4)))
+;(ajoutNoeud N G)
+;(suppressionNoeud N G)
+
+;Question 5
+
+(define G2 (list '(1 (2 3) () (2 3 6)) '(2 (2 3) (1) (3 7)) '(3 (2 3) (1 2) (4 6 7)) '(4 (2 3) (3) (5 9)) '(5 (2 3) (4 6) (8)) '(6 (2 3) (1 3) (5)) '(7 (2 3) (2 3) (9)) '(8 (2 3) (5 9) ()) '(9 (2 3) (4 7) (8))))
+
+(define criticiteEtape
+  (lambda (N)
+    (if (null? N)
+        0
+        (- (car(valeurNoeud N)) (car(cdr(valeurNoeud N)))))))
+
+(criticiteEtape N)

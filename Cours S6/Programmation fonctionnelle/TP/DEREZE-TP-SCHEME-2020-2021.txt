@@ -1,0 +1,340 @@
+#lang racket
+;Exercice 1
+
+;Calcul de l'integrale
+(define integrale
+  (lambda (f n a b)
+    (calculIntegrale f n a b n )))
+
+;Calcul la somme des aires des rectangles
+(define calculIntegrale
+  (lambda (f n a b i)
+    (if (= i 0)
+        0
+        (+ (aireRectangle (/ (- b a) n) (f (milieu i a b n))) (calculIntegrale f n a b (- i 1))))))
+
+;Calcul l'aire d'un rectangle
+(define aireRectangle
+  (lambda (L l)
+    (* L l)))
+
+;Définit la fonction
+(define f
+  (lambda (x)
+    (* x x x)))
+
+;Calcul l'abscisse du milieu du kieme element
+(define milieu
+  (lambda (k a b n)
+    (+ a (* (- k 1) (/ (- b a) n)) (/ (- b a) (* 2 n)))))
+
+;(integrale f 1 2 4)
+
+
+;Exercice 2
+; Question 1
+
+;Définition de polynome
+(define P '((5 0)(2 2)(-3 7)(7 9)))
+(define P1 '((15 0)(4 2)(3 4)(4 8)))
+
+
+; Question 2
+;Retourne le degré d'un monome
+(define degreMonome
+  (lambda(M)
+    (car(cdr M))))
+
+;(degreMonome '(5 4))
+
+
+; Question 3
+;Retourne le coefficeint d'un monome
+(define coefficientMonome
+  (lambda(M)
+    (car M)))
+
+;(coefficientMonome '(5 0))
+
+
+; Question 4
+;Retourne le degre d'un polynome
+(define degrePolynome
+  (lambda(P)
+    (degrePolynome2 P 0)))
+
+(define degrePolynome2
+  (lambda(P D)
+    (if(null? P)
+       D
+       (if(> (degreMonome (car P)) D)
+          (degrePolynome2 (cdr P) (degreMonome (car P)))
+          (degrePolynome2 (cdr P) D)))))
+
+;(degrePolynome P)
+
+
+; Question 5
+;Retourne la valeur d'un monome avec X donné
+(define valeurMonome
+  (lambda(M X)
+    (* (expt X (degreMonome M)) (coefficientMonome M))))
+
+;(valeurMonome '(5 4) 2)
+
+
+; Question 6
+;Retourne la valeur d'un polynome avec X donné
+(define valeurPolynome
+  (lambda(P X)
+    (valeurPolynome2 P X 0)))
+
+(define valeurPolynome2
+  (lambda(P X R) 
+    (if(null? P)
+       R
+       (+ (valeurMonome (car P) X) (valeurPolynome2 (cdr P) X R)))))
+
+;(valeurPolynome P 2)
+
+
+; Question 7
+;Somme formelle de deux polynome
+(define sommeFormelle
+  (lambda(P1 P2)
+    (if(null? P1)
+       P2
+    (sommeFormelle2 P1 P2 '())
+    )
+  )
+  )
+
+
+(define sommeFormelle2
+  (lambda(P1 P2 Ps)
+    (if(> (degrePolynome P1) (degrePolynome P2))
+       (sommeFormelle3 P1 P2 0 (degrePolynome P2) '() )
+       (sommeFormelle3 P1 P2 0 (degrePolynome P2) '() )
+       )
+ 
+  )
+)
+
+;Réalisation de la nouvelle liste contenant la somme des polynomes
+(define sommeFormelle3
+  (lambda(P1 P2 i nbMax PS)
+    (if(= i (+ nbMax 1))
+       PS
+       (if(= 0 (coefficientMonome (sommeMonome(iemeMonome P1 i)(iemeMonome P2 i)) ))
+       (sommeFormelle3 P1 P2 (+ i 1) nbMax PS)
+       (sommeFormelle3 P1 P2 (+ i 1) nbMax (append PS (list(sommeMonome(iemeMonome P1 i)(iemeMonome P2 i)))))
+                      
+       )
+    )
+  )
+  )
+
+;Pemet de réaliser la somme de deux monomes
+(define sommeMonome
+  (lambda(M1 M2)
+    (list (+ (car M1) (car M2)) (cadr M1))
+    )
+  )
+
+;Permet de récupérer les monomes ayant les memes degrés
+(define iemeMonome
+  (lambda( P1 i)
+    ( if(null? P1)
+        (list 0 i)
+        (if(= (degreMonome (car P1)) i)
+           (car P1)
+           (iemeMonome (cdr P1) i)
+           )
+        )
+    )
+  )
+
+(sommeFormelle P P1)
+
+;Question 8
+
+;Calcul la dérivé d'un polynome
+(define derive
+  (lambda (P)
+    (deriveFormelle P '())))
+
+;Calcul de la dérivé pour chaque monome et création d'une nouvelle liste les contenant
+(define deriveFormelle
+  (lambda(P1 P2)
+    (if(null? P1)
+       P2
+       (if(> (degreMonome (car P1)) 1)
+          (deriveFormelle (cdr P1) (append P2 (list(list (* (degreMonome (car P1)) (coefficientMonome (car P1))   ) (- (degreMonome (car P1)) 1) ) )))
+
+          (deriveFormelle (cdr P1)  P2)
+          )
+       )
+    )
+  )
+
+;(derive P)
+
+
+;Question 9
+
+;Calcul la primitive d'un polynome
+(define primitive
+  (lambda (P)
+    (primitiveFormelle P '())))
+
+;Calcul de la primitive pour chaque monome et cration d'une nouvelle liste les contenant
+(define primitiveFormelle
+  (lambda(P1 P2)
+    (if(null? P1)
+       P2
+        (primitiveFormelle (cdr P1) (append P2 (list(list (/ (coefficientMonome (car P1)) (+ 1 (degreMonome (car P1)))) (+ (degreMonome (car P1)) 1) ))))
+       )
+    )
+  )
+
+;(primitive P)
+
+;Question 10
+;Multiplication de deux polynomes
+(define multiplication
+  (lambda (P1 P2)
+    (multiplicationFormelle P1 P2 '())))
+
+
+(define multiplicationFormelle
+  (lambda(P1 P2 Ps)
+    (if(null? P1)
+       Ps
+       (multiplicationFormelle (cdr P1) P2 (sommeFormelle Ps (multMoParPo (car P1) P2 '())))
+       )
+    )
+  )
+
+;Réalisation de la multiplication entre un monome et un polynome
+(define multMoParPo
+  (lambda(Mo P1 P2)
+    (if(null? P1)
+       P2
+       (multMoParPo Mo (cdr P1) (append P2 (list (list(* (coefficientMonome Mo) (coefficientMonome (car P1))   ) (+ (degreMonome (car P1)) (degreMonome Mo)) ) )))
+       )
+    )
+  )
+
+(multiplication P P1)
+
+;Partie 3
+;Question 2
+;creation d'un noeud
+(define creationNoeud
+  (lambda (n v LP LS)
+    (list n v LP LS)))
+
+;Retourne la valeur d'un noeud
+(define valeurNoeud
+  (lambda (N)
+    (cadr N)))
+
+;retourne le nom d'un noeud N
+(define nomNoeud
+  (lambda (N)
+    (car N)))
+
+;retourne la liste des prédécesseurs d'un noeud N
+(define noeudPred
+  (lambda (N)
+    (caddr N)))
+
+;retourne la liste des successeurs d'un noeud N
+(define noeudSuc
+  (lambda (N)
+    (cadddr N)))
+
+;determine si une valeur appartient à une liste
+(define appartient?
+  (lambda (e L)
+    (if (null? L)
+        #f
+        (if (= (car L) e)
+            #t
+            (appartient? e (cdr L))))))
+
+;ajoute un noeud N dans un graphe G
+(define ajoutNoeud
+  (lambda (N G)
+    (if (null? G)
+        N
+        (if(null? N)
+           G
+           (ajoutNoeud2 G N '())))))
+
+;Gère l'ajout des successeurs, prédécesseurs ainsi que du noeud N dans le graphe G
+(define ajoutNoeud2
+  (lambda (G N G2);G2 est le résultat de l'ajout
+  (if (null? G)
+      (cons N G2)
+      (if (appartient? (nomNoeud (car G)) (noeudSuc N))
+          (ajoutNoeud2 (cdr G) N (cons (creationNoeud (nomNoeud (car G)) (valeurNoeud (car G)) (cons (nomNoeud N) (noeudPred (car G))) (noeudSuc (car G))) G2 ))
+          (if (appartient? (nomNoeud (car G)) (noeudPred N))
+              (ajoutNoeud2 (cdr G) N (cons (creationNoeud (nomNoeud (car G)) (valeurNoeud (car G)) (noeudPred (car G)) (cons (nomNoeud N) (noeudSuc (car G)))) G2))
+              (ajoutNoeud2 (cdr G) N (cons (car G) G2)))))))
+
+;Supprime un noeud N dans un graphe G
+(define suppressionNoeud
+  (lambda (N G)
+    (if (null? G)
+        '()
+        (if(null? N)
+           G
+           (suppressionNoeud2 G N '())))))
+
+;Gère la suppression des successeurs, prédécesseurs ainsi que du noeud N dans le graphe G
+(define suppressionNoeud2
+  (lambda (G N G2);G2 est le résultat de cet suppression
+  (if (null? G)
+      (cons G2 '())
+      (if (appartient? (nomNoeud N) (noeudSuc (car G)))
+          (suppressionNoeud2 (cdr G) N G2)
+          (if (appartient? (nomNoeud N) (noeudPred (car G)))
+              (suppressionNoeud2 (cdr G) N)
+              (suppressionNoeud2 (cdr G) N (cons (car G) G2)))))))
+
+;retourne la liste des successeurs directs d'un noeud N dans un graphe G
+(define listeSuccesseurs
+  (lambda (N G)
+    (if (null? G)
+        '()
+        (if (eq? N (nomNoeud (car G)))
+            (noeudSuc (car G))
+            (listeSuccesseurs N (cdr G))))))
+
+;retourne la liste des prédécesseurs direct d'un noeud N dans un graphe G
+(define listePredecesseurs
+  (lambda (N G)
+    (if (null? G)
+        '()
+        (if (eq? N (nomNoeud (car G)))
+            (noeudPred (car G))
+            (listePredecesseurs N (cdr G))))))
+
+;Test
+(define G (list '(1 2 () (2 3 6)) '(2 2 (1) (3 7)) '(3 2 (1 2) (4 6 7)) '(4 2 (3) (5 9)) '(5 2 (4 6) (8)) '(6 2 (1 3) (5)) '(7 2 (2 3) (9)) '(8 2 (5 9) ()) '(9 2 (4 7) (8))))
+(define N (creationNoeud 10 '(4 2) '(1) '(3 4)))
+(ajoutNoeud N G)
+(suppressionNoeud N G)
+(listePredecesseurs 3 G)
+(listeSuccesseurs 3 G)
+
+;Question 5
+;Calcul la criticité d'un étape
+(define criticiteEtape
+  (lambda (N)
+    (if (null? N)
+        0
+        (- (car(valeurNoeud N)) (car(cdr(valeurNoeud N)))))))
+
+(criticiteEtape N)

@@ -1,0 +1,3 @@
+TP 1 :
+Creer une exception pour eviter de mettre un nom de sommet supérieur a la réalité
+Lorsque l'on appelle la fonction supprimer connexion et que la connexion n'existe pas, signaler un message
